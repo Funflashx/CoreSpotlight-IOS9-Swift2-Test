@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D43EA5C81B9063DF00D42580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43EA5C71B9063DF00D42580 /* AppDelegate.swift */; };
-		D43EA5CA1B9063DF00D42580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43EA5C91B9063DF00D42580 /* ViewController.swift */; };
 		D43EA5CD1B9063DF00D42580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43EA5CB1B9063DF00D42580 /* Main.storyboard */; };
 		D43EA5CF1B9063DF00D42580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D43EA5CE1B9063DF00D42580 /* Assets.xcassets */; };
 		D43EA5D21B9063DF00D42580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D43EA5D01B9063DF00D42580 /* LaunchScreen.storyboard */; };
 		D43EA5DD1B9063DF00D42580 /* CoreSpotlight_IOS9_Swift2_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43EA5DC1B9063DF00D42580 /* CoreSpotlight_IOS9_Swift2_TestTests.swift */; };
 		D43EA5E81B9063DF00D42580 /* CoreSpotlight_IOS9_Swift2_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43EA5E71B9063DF00D42580 /* CoreSpotlight_IOS9_Swift2_TestUITests.swift */; };
+		D43EA5F61B90652C00D42580 /* CoreSpotLightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43EA5F51B90652C00D42580 /* CoreSpotLightController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		D43EA5C41B9063DF00D42580 /* CoreSpotlight-IOS9-Swift2-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreSpotlight-IOS9-Swift2-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43EA5C71B9063DF00D42580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D43EA5C91B9063DF00D42580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D43EA5CC1B9063DF00D42580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D43EA5CE1B9063DF00D42580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D43EA5D11B9063DF00D42580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		D43EA5E31B9063DF00D42580 /* CoreSpotlight-IOS9-Swift2-TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CoreSpotlight-IOS9-Swift2-TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43EA5E71B9063DF00D42580 /* CoreSpotlight_IOS9_Swift2_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSpotlight_IOS9_Swift2_TestUITests.swift; sourceTree = "<group>"; };
 		D43EA5E91B9063DF00D42580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D43EA5F51B90652C00D42580 /* CoreSpotLightController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreSpotLightController.swift; path = ../CoreSpotLightController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		D43EA5C61B9063DF00D42580 /* CoreSpotlight-IOS9-Swift2-Test */ = {
 			isa = PBXGroup;
 			children = (
+				D43EA5F51B90652C00D42580 /* CoreSpotLightController.swift */,
 				D43EA5C71B9063DF00D42580 /* AppDelegate.swift */,
-				D43EA5C91B9063DF00D42580 /* ViewController.swift */,
 				D43EA5CB1B9063DF00D42580 /* Main.storyboard */,
 				D43EA5CE1B9063DF00D42580 /* Assets.xcassets */,
 				D43EA5D01B9063DF00D42580 /* LaunchScreen.storyboard */,
@@ -192,6 +192,7 @@
 				TargetAttributes = {
 					D43EA5C31B9063DF00D42580 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = QD6M9REG6A;
 					};
 					D43EA5D71B9063DF00D42580 = {
 						CreatedOnToolsVersion = 7.0;
@@ -255,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D43EA5CA1B9063DF00D42580 /* ViewController.swift in Sources */,
+				D43EA5F61B90652C00D42580 /* CoreSpotLightController.swift in Sources */,
 				D43EA5C81B9063DF00D42580 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "CoreSpotlight-IOS9-Swift2-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Calopea.CoreSpotlight-IOS9-Swift2-Test";
@@ -407,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "CoreSpotlight-IOS9-Swift2-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Calopea.CoreSpotlight-IOS9-Swift2-Test";
