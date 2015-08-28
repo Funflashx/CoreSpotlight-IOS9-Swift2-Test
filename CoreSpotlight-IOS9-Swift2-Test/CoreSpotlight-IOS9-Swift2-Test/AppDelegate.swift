@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        return true
+    }
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                let splitViewController = self.window!.rootViewController as! UISplitViewController
+                let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+                
+                if let masterVC = navigationController.topViewController as? CoreSpotLightController {
+                    masterVC.showPastaDetails(Int(uniqueIdentifier)!)
+                }
+            }
+        }
+        
         return true
     }
 

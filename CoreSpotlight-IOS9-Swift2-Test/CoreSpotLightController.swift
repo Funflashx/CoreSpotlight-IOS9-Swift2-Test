@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import CoreSpotlight
 import MobileCoreServices
+import SafariServices
 
 
 //MARK: https://www.hackingwithswift.com/read/32/4/how-to-add-core-spotlight-to-index-your-app-content
 
-class CoreSpotLightController: UITableViewController {
+class CoreSpotLightController: UITableViewController, SFSafariViewControllerDelegate {
     
     var favorites = [Int]()
     var pastas: [String] = ["Fusilli","Spaghetti","Lasagne","Tagliatelle","Cannelloni","Macaroni","Penne","Rigatoni","Rotini","Conchiglie","Farfalle","Mandala","Rotelle","Tortelloni"]
@@ -107,6 +108,24 @@ class CoreSpotLightController: UITableViewController {
                 print("Search item successfully removed!")
             }
         }
+    }
+    
+    func showPastaDetails(index: Int){
+        let vc = UIViewController()
+        vc.title = pastas[index]
+        self.showViewController(vc, sender: nil)
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        showPastaDetails(indexPath.row)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     
