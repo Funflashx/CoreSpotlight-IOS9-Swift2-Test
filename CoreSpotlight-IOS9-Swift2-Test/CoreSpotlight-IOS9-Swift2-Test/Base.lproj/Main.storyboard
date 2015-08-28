@@ -2,7 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lra-5d-j1m">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-UltraLight</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Pasta-->
         <scene sceneID="pox-OK-DZY">
@@ -31,7 +37,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLN-Tj-bOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-1073"/>
+            <point key="canvasLocation" x="800" y="-857"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6xu-Be-5oP">
@@ -44,7 +50,35 @@
                     <view key="view" contentMode="scaleToFill" id="sb2-ZN-mPn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASTA !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VA-gI-yjD">
+                                <rect key="frame" x="145" y="262" width="311" height="75.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="1qa-uf-KTk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="55"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="lRB-KX-DUR">
+                                <rect key="frame" x="284" y="337" width="33" height="33"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3VA-gI-yjD" firstAttribute="centerY" secondItem="sb2-ZN-mPn" secondAttribute="centerY" id="Bcg-kF-btR"/>
+                            <constraint firstItem="3VA-gI-yjD" firstAttribute="centerX" secondItem="sb2-ZN-mPn" secondAttribute="centerX" id="EPU-4b-RzE"/>
+                            <constraint firstItem="lRB-KX-DUR" firstAttribute="centerX" secondItem="sb2-ZN-mPn" secondAttribute="centerX" id="QSq-k1-wvO"/>
+                            <constraint firstItem="lRB-KX-DUR" firstAttribute="centerY" secondItem="sb2-ZN-mPn" secondAttribute="centerY" constant="53" id="VsF-dT-VrX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3VA-gI-yjD" secondAttribute="trailing" constant="124" id="abR-an-xAX"/>
+                            <constraint firstItem="3VA-gI-yjD" firstAttribute="leading" secondItem="sb2-ZN-mPn" secondAttribute="leadingMargin" constant="125" id="neA-3j-yQ8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="abR-an-xAX"/>
+                                <exclude reference="neA-3j-yQ8"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9N-io-6Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,7 +114,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AY-As-mL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136" y="-1073"/>
+            <point key="canvasLocation" x="48" y="-857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="33" height="33"/>
+    </resources>
 </document>
