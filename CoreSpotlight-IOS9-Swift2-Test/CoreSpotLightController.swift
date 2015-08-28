@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 
 //MARK: https://www.hackingwithswift.com/read/32/4/how-to-add-core-spotlight-to-index-your-app-content
@@ -15,7 +17,7 @@ import UIKit
 class CoreSpotLightController: UITableViewController {
     
     var favorites = [Int]()
-    var pasta = ["Fusilli","Spaghetti","Lasagne","Tagliatelle","Cannelloni","Macaroni"]
+    var pastas: [String] = ["Fusilli","Spaghetti","Lasagne","Tagliatelle","Cannelloni","Macaroni","Penne","Rigatoni","Rotini","Conchiglie","Farfalle","Mandala","Rotelle","Tortelloni"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class CoreSpotLightController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = UITableViewCell()
-        cell.textLabel?.text = pasta[indexPath.row]
+        cell.textLabel?.text = pastas[indexPath.row]
         if favorites.contains(indexPath.row) {
             cell.editingAccessoryType = .Checkmark
         } else {
@@ -57,7 +59,7 @@ class CoreSpotLightController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return pasta.count
+        return pastas.count
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -78,9 +80,33 @@ class CoreSpotLightController: UITableViewController {
     }
     
     func indexItem(which: Int) {
+        
+        let pasta = pastas[which]
+        
+        let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+        attributeSet.title = pasta
+        //attributeSet.contentDescription = pasta[1]
+        
+        let item = CSSearchableItem(uniqueIdentifier: "\(which)", domainIdentifier: "com.Calopea", attributeSet: attributeSet)
+        //Useful info -> "[...][Indexed content] has an expiration date of one month[...]"
+        item.expirationDate = NSDate.distantFuture() //make items never expire
+        CSSearchableIndex.defaultSearchableIndex().indexSearchableItems([item]) { (error: NSError?) -> Void in
+            if let error = error {
+                print("Indexing error: \(error.localizedDescription)")
+            } else {
+                print("Search item successfully indexed!")
+            }
+        }
     }
     
     func deindexItem(which: Int) {
+        CSSearchableIndex.defaultSearchableIndex().deleteSearchableItemsWithIdentifiers(["\(which)"]) { (error: NSError?) -> Void in
+            if let error = error {
+                print("Deindexing error: \(error.localizedDescription)")
+            } else {
+                print("Search item successfully removed!")
+            }
+        }
     }
     
     
